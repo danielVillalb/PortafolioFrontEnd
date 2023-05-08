@@ -1,6 +1,7 @@
 *{
     list-style: none;
     text-decoration: none;
+    margin: 0;
 }
 /*--------------Declaracion de colores y tamanos-----------*/
 :root{
@@ -16,7 +17,23 @@ h2{
 i{
     font-size: 20px;
 }
-
+body,header,section{
+    max-width: 767px;
+    min-width: 767px;
+}
+.caja h2,.caja i{
+    display: inline-block;
+}
+.caja i{
+    margin-right: 15px;
+}
+@media(min-width:768px){
+    body,header,section{
+        
+        min-width: 100%;
+    }
+    
+}
 
 .contenedor{
     min-width: 100%;
@@ -33,6 +50,9 @@ i{
     color: white;
 }
 
+
+
+
 .logo-Ar{
     display:flex ;
     justify-content: center;
@@ -48,6 +68,18 @@ i{
 .site-header nav{
     margin: var(--margenes);
 }
+
+
+
+
+
+.nav{
+    display: none;
+}
+@media(min-width:700px){
+    .nav{
+        display: inline-block;
+    }
 .nav a{
     color: white;
     margin-left: var(--margenes);
@@ -56,7 +88,7 @@ i{
     align-items: center;
     
 }
-
+}
 
 
 /*---------banner--------------*/
@@ -108,21 +140,6 @@ i{
 }
 /*------------acerca De--------*/
 
-.contenedo{
-    display: grid;
-    grid-template-columns: 1fr 7fr;
-
-
-}
-
-
-
-
-/*-------left------------*/
-
-.perfil:hover::before{
-    border-radius: 50%;
-}
 .perfil{
     position: relative;
     display: flex;
@@ -139,24 +156,48 @@ i{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
-}
-.perfil div{
-    position: relative;
 }
 
-.personal button{
-    margin-right: var(--margenes);
-}
 .personal{
     margin-top: -20px;
     justify-content: space-evenly;
+    flex-direction: column;
 }
+.personal p{
+    margin-bottom: 0;
+}
+.personal span{
+    color: #0873a9;
+}
+/*-------left------------*/
+@media (min-width: 768px) {
+    .contenedo{
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+    
+    
+    }
+    .perfil:hover::before{
+        border-radius: 50%;
+    }
+    
+    .perfil div{
+        position: relative;
+    }
+    
+    .personal button{
+        margin-right: var(--margenes);
+    }
+    .personal{
+        margin-top: -20px;
+        justify-content: space-evenly;
+    }
+    
+    h2{
+        margin-right: 15px;
+    }
 
-h2{
-    margin-right: 15px;
-}
-/*-----rigth----------*/
+    /*-----rigth----------*/
 .rigth div{
     display: flex;
     align-items: center;
@@ -166,6 +207,13 @@ h2{
     position: relative;
     text-align: center;
 }
+.caja i{
+    margin-right: var(--margenes);
+    font-size: 22px;
+}
+}
+
+
 
 /*---------------------Experiencia--------*/
 
@@ -202,3 +250,7 @@ li h3{
 
 
 
+.row1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
